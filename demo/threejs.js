@@ -57,6 +57,9 @@ function init() {
 	
 	if (playBtn) {
 		playBtn.addEventListener('click', function () {
+			
+			console.log('play');
+			
 			if (video.paused) {
 				video.play();
 			} else {
