@@ -6,7 +6,7 @@ var container;
 
 var camera, scene, renderer;
 
-var video, texture, material, mesh;
+var video, texture, material, mesh, playBtn;
 
 var composer;
 
@@ -52,6 +52,18 @@ function init() {
 	texture.minFilter = THREE.LinearFilter;
 	texture.magFilter = THREE.LinearFilter;
 	texture.format = THREE.RGBFormat;
+	
+	playBtn = video.parentNode.querySelector('.play');
+	
+	if (playBtn) {
+		playBtn.addEventListener('click', function () {
+			if (video.paused) {
+				video.play();
+			} else {
+				video.pause();
+			}
+		});
+	}
 
 	//
 
